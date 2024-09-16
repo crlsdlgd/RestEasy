@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    
-    <h1 class="text-3xl font-bold text-red-500 underline ">
-        HELLO WORLD
-    </h1>
 
-    <script src="assets/js/index.js"></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Rent Easy</title>
+	<script src="https://cdn.tailwindcss.com"></script> <!-- tailwind cdn -->
+
+	<link rel="stylesheet" href="assets/css/styles.css" /> <!-- styles css -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" /> <!-- google fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-to-r from-[#F9FCFE] to-[#D4E3F5]">
+	<header class="shadow px-4">
+		<div class="flex justify-between h-16 items-center mx-auto lg:w-4/5" >
+			<a href="" class="flex items-center gap-2 px-2 py-2 rounded hover:bg-[#608F8F] transition-all flex-1 sm:flex-none">
+				<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+					class="h-8 w-8 text-[#1F375B] fill-current">
+					<title>logo</title>
+					<path
+						d="M15.98 2.442H8.02L0 10.46h2.275l6.882-6.88 6.881 6.881H24l-8.02-8.018m-.492 9.348L9.157 5.459 4.01 10.605v4.987a1.33 1.33 0 0 0 1.329 1.329h6.077l4.637 4.637v-4.637h2.598a1.33 1.33 0 0 0 1.33-1.33V11.79h-4.494Z" />
+				</svg>
+				<h1 class="text-[#1F375B] font-bold text-2xl logo-font">Rent Easy</h1>
+			</a>
+			<div class="hidden sm:flex items-center">
+				<a href=""
+					class="rounded hover:bg-[#608F8F] text-[#1F375B] font-medium px-4 py-2 transition-all">HOME</a>
+				<a href="" class="rounded hover:bg-[#608F8F] text-[#1F375B] font-medium px-2 py-2 transition-all">ALL
+					FLATS</a>
+				<a href="" class="rounded hover:bg-[#608F8F] text-[#1F375B] font-medium px-4 py-2 transition-all">NEW
+					FLAT</a>
+			</div>
+			<div class="flex items-center gap-2">
+				<button class="rounded-full border hover:bg-[#608F8F] text-[#1F375B] p-2 transition-all">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+						stroke="currentColor" class="size-6">
+						<path stroke-linecap="round" stroke-linejoin="round"
+							d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+					</svg>
+				</button>
+				<button class="rounded hover:bg-[#608F8F] text-[#1F375B] px-4 py-2 transition-all font-bold bg-[#FEFFFF] mr-2 sm:mr-0">LOGIN</button>
+			</div>
+			<button class="rounded border p-1 sm:hidden">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+					stroke="currentColor" class="h-8 w-8 text-[#1F375B] fill-current">
+					<path stroke-linecap="round" stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+				</svg>
+			</button>
+		</div>
+	</header>
+
+	<script src="assets/js/index.js"></script>
 </body>
+
 </html>
