@@ -1,3 +1,4 @@
-if (true) {
-	console.log("hello");
+const toggleMenu = () => {
+	const menu = document.querySelector('.menu');
+	menu.classList.toggle('hidden');
 }
