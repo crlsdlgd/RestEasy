@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Easy Login</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <script src="https://cdn.tailwindcss.com"></script> <!-- tailwind cdn -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /> <!-- Google fonts -->
+    
+</head>
+<body class="bg-gradient-to-r from-[#F9FCFE] to-[#D4E3F5]">
+    <main>
+        <section class="mx-auto rounded-3xl flex flex-col items-center mt-10 sm:w-3/5 lg:w-1/2">
+            <h3 class="text-center bold text-3xl text-[#1F375B] mt-4">Sign In</h3>
+
+            <form>
+                <div class="flex flex-row m-4 h-8">
+                    <input id="email" type="email" name="email" required placeholder="Email" class="text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                    <label for="email" class="text-[#1F375B] flex items-center cursor-pointer">
+                        <span class="material-symbols-outlined">person</span>
+                    </label>
+                </div>
+                <div class="flex flex-row m-4 h-8 ">
+                    <input id="password" type="password" name="password" required placeholder="Password" class="text-[#1F375B] rounded-full px-2 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                    <label for="password" class="text-[#1F375B] flex items-center cursor-pointer">
+                        <span class="material-symbols-outlined">lock</span>
+                    </label>
+                </div>
+
+                <div class="flex justify-center">
+                    <button type="submit" class="flex justify-center border border-[#1F375B] hover:bg-[#608F8F] transition-all text-[#1F375B] p-2 transition-all w-10/12 font-medium">LOGIN 
+                        <span class="material-symbols-outlined">
+                            login
+                        </span>
+                    </button>
+                </div>
+            </form>
+
+            <p class="text-[#1F375B] text-center my-4">Don't have an account? <a href="register.html" class="text-[#608F8F] underline">Register</a></p>
+        </section>
+    </main>
+</body>
+</html>
