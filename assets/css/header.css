@@ -1,3 +1,23 @@
 #check:checked~.menu {
     right: 0;
+    display: flex;
+}
+
+#user-check:checked~div #user-menu {
+    right: 80px;
+    display: block;
+}
+
+@media screen and (max-width: 1024px) {
+    #user-check:checked~div #user-menu {
+        right: 8px;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #user-check:checked~div #user-menu {
+        right: 34px;
+        display: block;
+    }
 }

@@ -14,13 +14,14 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" /> <!-- google fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body class="bg-gradient-to-r from-[#F9FCFE] to-[#D4E3F5]">
 	<header class="shadow px-4">
 		<!-- logo -->
-		<div class="flex justify-between h-16 items-center mx-auto lg:w-4/5">
+		<div class="flex justify-between h-16 items-center mx-auto lg:w-4/5 ">
 			<a href=""
 				class="flex items-center gap-2 px-2 py-2 rounded hover:bg-[#608F8F] transition-all flex-1 sm:flex-none">
 				<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -34,12 +35,12 @@
 
 			<!-- menu -->
 			<ul
-				class="flex flex-col sm:flex-row items-center menu absolute top-16 right-2 bg-[#D4E3F5] border-solid border border-[#1F375B] sm:static sm:border-none sm:bg-transparent">
+				class="hidden sm:flex flex-col sm:flex-row items-center menu absolute top-16 right-2 bg-[#D4E3F5] border-solid border border-[#1F375B] divide-y divide-[#1f375b4d] sm:divide-none sm:static sm:border-none sm:bg-transparent">
 				<li class="px-4 py-2 sm:p-0">
 					<a href=""
 						class="rounded hover:bg-[#608F8F] text-[#1F375B] font-medium px-4 py-2 transition-all">HOME</a>
 				</li>
-				<li class="px-4 py-2 sm:p-0 border border-y-[#1f375b4d] sm:border-none">
+				<li class="px-4 py-2 sm:p-0">
 					<a href=""
 						class="rounded hover:bg-[#608F8F] text-[#1F375B] font-medium px-4 py-2 transition-all">ALL
 						FLATS</a>
@@ -53,15 +54,28 @@
 
 			<!-- theme & user -->
 			<div class="flex items-center gap-2">
-				<button class="rounded-full border hover:bg-[#608F8F] text-[#1F375B] p-2 transition-all">
+				<!-- <button class="rounded-full border hover:bg-[#608F8F] text-[#1F375B] p-2 transition-all">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 						stroke="currentColor" class="size-6">
 						<path stroke-linecap="round" stroke-linejoin="round"
 							d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
 					</svg>
-				</button>
-				<button
-					class="rounded hover:bg-[#608F8F] text-[#1F375B] px-4 py-2 transition-all font-bold bg-[#FEFFFF] mr-2 sm:mr-0">LOGIN</button>
+				</button> -->
+				<input type="checkbox" id="user-check" class="hidden">
+				<p>Hello, User</p>
+				<label for="user-check"
+					class="rounded-full size-10 hover:bg-[#608F8F] text-[#1F375B] p-2 transition-all font-bold bg-[#9ea5a5] mr-2 sm:mr-0">US</label>
+				<div id="">
+					<ul id ="user-menu" class="absolute right-[-120px] top-16 bg-[#D4E3F5] border-solid border border-[#1F375B] divide-y divide-[#1f375b4d] hidden">
+						<li  class="hover:bg-[#608F8F] p-2"><a href="updateProfile.html">Update Profile</a></li>
+						<li><a href="login.html" onclick="logout()" class="flex justify-center gap-2 hover:bg-[#608F8F] p-2">Logout 
+							<span class="material-symbols-outlined">
+								logout
+							</span></a>
+						</li>
+					</ul>
+				</div>
+
 			</div>
 			<!-- menu-collapse -->
 			<button class="rounded border p-1 sm:hidden" onclick="toggleMenu()">
@@ -74,7 +88,6 @@
 					stroke="currentColor" class="size-6 hidden">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 				</svg>
-
 			</button>
 		</div>
 	</header>
