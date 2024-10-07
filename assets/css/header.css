@@ -4,7 +4,7 @@
 }
 
 #user-check:checked~div #user-menu {
-    right: 80px;
+    right: calc(5% + 60px);
     display: block;
 }
 
