@@ -3,21 +3,18 @@
     display: flex;
 }
 
-#user-check:checked~div #user-menu {
+#user-menu {
     right: calc(5% + 60px);
-    display: block;
 }
 
 @media screen and (max-width: 1024px) {
-    #user-check:checked~div #user-menu {
+    #user-menu {
         right: 8px;
-        display: block;
     }
 }
 
 @media screen and (max-width: 640px) {
-    #user-check:checked~div #user-menu {
+    #user-menu {
         right: 34px;
-        display: block;
     }
 }
