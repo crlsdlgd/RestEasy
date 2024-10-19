@@ -1,11 +1,17 @@
-const submitLogin = (event) => {
+import User from "./class/user";
+
+document.getElementById('login-form').addEventListener('submit', (event) => {
+    submitLogin(event)
+})
+
+function submitLogin(event) {
     event.preventDefault();
     const form = event.target;
-    const user = {
-        password: form.elements['password'].value,
-        email: form.elements['email'].value,
+    const user = new User(
+        form.elements['email'].value,
+        form.elements['password'].value
+    );
 
-    }
     let userLogged;
     const users = JSON.parse(localStorage.getItem('users'));
 

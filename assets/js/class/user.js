@@ -8,3 +8,5 @@ class User {
         this.favoriteFlats = [];
     }
 }
+
+export default User;

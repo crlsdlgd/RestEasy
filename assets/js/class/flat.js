@@ -10,3 +10,4 @@ class Flat {
         this.dateAvailable = dateAvailable;
     }
 }
+export default Flat;
