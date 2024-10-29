@@ -8,7 +8,7 @@ const toggleUserMenu = () => {
     userMenu.classList.toggle('hidden');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const [email] = document.getElementsByName('email');
-    email.value = 'qwe@qwe.com';
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//     const [email] = document.getElementsByName('email');
+//     email.value = 'qwe@qwe.com';
+// })
