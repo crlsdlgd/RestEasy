@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /> <!-- Google fonts -->
     
 </head>
-<body class="bg-gradient-to-r from-[#F9FCFE] to-[#D4E3F5]">
+<!-- <body class="bg-gradient-to-r from-[#F9FCFE] to-[#D4E3F5]"> -->
+    <body class="bg-[url('/assets/images/body-bg2.svg')] bg-cover bg-center bg-no-repeat min-h-screen">
     <main>
         <section class="mx-auto rounded-3xl flex flex-col items-center mt-10 xs:w-full sm:w-3/4 lg:w-2/3 lg:max-w-[800px]">
             <h3 class="text-center bold text-3xl text-[#1F375B] mt-4">Sign Up</h3>
@@ -22,16 +23,16 @@
                 <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center">
                     <!-- First name -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="first-name" type="text" name="first-name" required placeholder="First name"
-                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                        <input id="first-name" type="text" name="first-name" required placeholder="First name" autocomplete="given-name"
+                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="first-name"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">First
                             name</label>
                     </div>
                     <!-- Last name -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="last-name" type="text" name="last-name" required placeholder="Last name"
-                            class=" w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                        <input id="last-name" type="text" name="last-name" required placeholder="Last name" autocomplete="family-name"
+                            class=" w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="last-name"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Last
                             name</label>
@@ -41,16 +42,16 @@
                 <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center">
                     <!-- birth date -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="birth-date" type="text" name="birth-date" required placeholder="Birth date"
+                        <input id="birth-date" type="text" name="birth-date" required placeholder="Birth date" autocomplete="bday"
                             onfocus="(this.type='date'),(this.style.width='100%')"
-                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="birth-date"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Birth
                             date</label>
                     </div>
                     <!-- email -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="email" type="email" name="email" required placeholder="Email" class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                        <input id="email" type="email" name="email" required placeholder="Email" autocomplete="new-email" class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="email"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Email</label>
                     </div>
@@ -59,15 +60,15 @@
                 <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center">
                     <!-- password -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="password" type="password" name="password" required placeholder="password"
-                            class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                        <input id="password" type="password" name="password" required placeholder="password" autocomplete="new-password"
+                            class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="password"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Password</label>
                     </div>
                     <!-- confirm password -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="confirm-password" type="password" name="confirm-password" required placeholder="confirm-password"
-                            class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                        <input id="confirm-password" type="password" name="confirm-password" required placeholder="confirm-password" autocomplete="new-password"
+                            class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="confirm-password"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Confirm password</label>
                     </div>
@@ -76,7 +77,7 @@
 
                 <!-- register button -->
                 <div class="flex justify-center mt-4">
-                    <button type="submit" class="flex justify-center border border-[#1F375B] hover:bg-[#608F8F] transition-all text-[#1F375B] p-2 w-10/12 max-w-[300px] font-medium">REGISTER 
+                    <button type="submit" class="flex justify-center border border-[#1F375B] hover:bg-[#276792]/60 transition-all text-[#1F375B] p-2 w-10/12 max-w-[300px] font-medium">REGISTER 
                         <span class="material-symbols-outlined ml-1">
                             person_add
                         </span>
@@ -84,7 +85,7 @@
                 </div>
             </form>
 
-            <p class="text-[#1F375B] text-center my-4">Already have an account? <a href="login.html" class="text-[#608F8F] underline">Login</a></p>
+            <p class="text-[#1F375B] text-center my-4">Already have an account? <a href="login.html" class="underline font-semibold">Login</a></p>
         </section>
     </main>
 </body>

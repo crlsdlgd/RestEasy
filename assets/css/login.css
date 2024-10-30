@@ -1,11 +1,15 @@
 section {
     border-radius: 20px;
-    background: #D4E3F5;
-    box-shadow: 24px 24px 39px #c1cfdf,
-        -24px -24px 39px #e7f7ff;
+    background: rgba(255, 255, 255, 0.5);
+    /* box-shadow: 24px 24px 39px #c1cfdf,
+        -24px -24px 39px #e7f7ff; */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .shadow-inside {
-    background: #D4E3F5;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+    /* border-radius: 50px; */
+        background: transparent;
+        box-shadow: inset 11px 11px 8px #d3f0f0,
+            inset -11px -11px 8px #e5ffff;
 }

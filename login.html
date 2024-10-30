@@ -15,7 +15,9 @@
 
 </head>
 
-<body class="bg-gradient-to-r from-[#F9FCFE] to-[#D4E3F5]">
+<!-- <body class="bg-gradient-to-r from-[#F9FCFE] to-[#D4E3F5]"> -->
+<body class="bg-[url('/assets/images/body-bg2.svg')] bg-cover bg-center bg-no-repeat min-h-screen">
+
     <main>
         <section class="mx-auto rounded-3xl flex flex-col items-center justify-center mt-10 xs:w-3/4 sm:3/5 md:max-w-[700px]">
             <h3 class="text-center bold text-3xl text-[#1F375B] my-4">Sign In</h3>
@@ -24,8 +26,8 @@
                 <!-- Email -->
                 <div class="flex flex-row mx-auto mb-4 h-8 max-w-[300px]">
                     <div class="relative flex flex-1">
-                        <input id="email" type="email" name="email" required placeholder="Email"
-                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                        <input id="email" type="email" name="email" required placeholder="Email" autocomplete="new-email"
+                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="email"
                             class="absolute left-2 -top-3.5 transition-all peer-placeholder-shown:text-gray-400 text-[#1F375B] peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs">Email</label>
                     </div>
@@ -37,8 +39,8 @@
                 <!-- Password -->
                 <div class="flex flex-row mx-auto mb-4 h-8 max-w-[300px]">
                     <div class="relative flex flex-1">
-                        <input id="password" type="password" name="password" required placeholder="Password"
-                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none hover:scale-105 transition-all focus:bg-[#F9FBFF]">
+                        <input id="password" type="password" name="password" required placeholder="Password" autocomplete="new-password"
+                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="password"
                             class="absolute left-2 -top-3.5 transition-all peer-placeholder-shown:text-gray-400 text-[#1F375B] peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs">Password</label>
                     </div>
@@ -50,7 +52,7 @@
                 <!-- button login -->
                 <div class="flex justify-center">
                     <button type="submit"
-                        class="flex justify-center border border-[#1F375B] hover:bg-[#608F8F] text-[#1F375B] p-2 transition-all w-full max-w-[300px] font-medium">LOGIN
+                        class="flex justify-center border border-[#1F375B] hover:bg-[#276792]/60 text-[#1F375B] p-2 transition-all w-full max-w-[300px] font-medium">LOGIN
                         <span class="material-symbols-outlined">
                             login
                         </span>
@@ -59,7 +61,7 @@
             </form>
             <!-- register -->
             <p class="text-[#1F375B] text-center my-4">Don't have an account? <a href="register.html"
-                    class="text-[#608F8F] underline">Register</a></p>
+                    class="underline font-semibold">Register</a></p>
         </section>
     </main>
     <script src="assets/js/login.js" type="module"></script>
