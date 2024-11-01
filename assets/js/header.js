@@ -14,5 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function logout() {
-    localStorage.setItem('userLogged', null);
+    localStorage.removeItem('userLogged');
+    window.location.href = 'login.html';
 }
+
+document.getElementById('logout').addEventListener('click', logout);

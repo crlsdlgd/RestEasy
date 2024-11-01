@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +11,26 @@
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> tailwind cdn -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /> <!-- Google fonts -->
-    
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Google fonts -->
+
 </head>
 <!-- <body class="bg-gradient-to-r from-[#F9FCFE] to-[#D4E3F5]"> -->
-    <body class="bg-[url('/assets/images/body-bg2.svg')] bg-cover bg-center bg-no-repeat min-h-screen">
+
+<body class="bg-[url('/assets/images/body-bg2.svg')] bg-cover bg-center bg-no-repeat min-h-screen">
     <main>
-        <section class="mx-auto rounded-3xl flex flex-col items-center mt-10 xs:w-full sm:w-3/4 lg:w-2/3 lg:max-w-[800px]">
+        <section
+            class="mx-auto rounded-3xl flex flex-col items-center mt-10 xs:w-full sm:w-3/4 lg:w-2/3 lg:max-w-[800px]">
             <h3 class="text-center bold text-3xl text-[#1F375B] mt-4">Sign Up</h3>
 
-            <form class="w-11/12 " id="register-form" onsubmit="submitRegister(event)">
+            <form class="w-11/12 " id="register-form" onsubmit="submitRegister(event)" >
                 <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center">
                     <!-- First name -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="first-name" type="text" name="first-name" required placeholder="First name" autocomplete="given-name"
+                        <input id="first-name" type="text" name="first-name" required placeholder="First name"
+                            autocomplete="given-name" pattern="[A-Za-z\s]{2,}"
+                            title="First name must contain at least 2 characters"
                             class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="first-name"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">First
@@ -31,7 +38,9 @@
                     </div>
                     <!-- Last name -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="last-name" type="text" name="last-name" required placeholder="Last name" autocomplete="family-name"
+                        <input id="last-name" type="text" name="last-name" required placeholder="Last name"
+                            autocomplete="family-name" pattern="[A-Za-z\s]{2,}"
+                            title="Last name must contain at least 2 characters"
                             class=" w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="last-name"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Last
@@ -39,11 +48,11 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center">
+                <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center" id="birth-date-email-container">
                     <!-- birth date -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="birth-date" type="text" name="birth-date" required placeholder="Birth date" autocomplete="bday"
-                            onfocus="(this.type='date'),(this.style.width='100%')"
+                        <input id="birth-date" type="text" name="birth-date" required placeholder="Birth date"
+                            autocomplete="bday" onfocus="(this.type='date'),(this.style.width='100%')"
                             class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="birth-date"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Birth
@@ -51,33 +60,42 @@
                     </div>
                     <!-- email -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="email" type="email" name="email" required placeholder="Email" autocomplete="new-email" class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
+                        <input id="email" type="email" name="email" required placeholder="Email"
+                            autocomplete="new-email" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" onfocus="removeUniqueEmailError()"
+                            title="Please enter a valid email"
+                            class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="email"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Email</label>
+                            <span id="email-error" class="text-red-500 text-xs flex left-[1.1rem] absolute"></span>
                     </div>
                 </div>
 
-                <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center">
+                <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center" id="passwords-container">
                     <!-- password -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="password" type="password" name="password" required placeholder="password" autocomplete="new-password"
+                        <input id="password" type="password" name="password" required placeholder="password" onfocus="removeConfirmPasswordError()"
+                            autocomplete="new-password" pattern="(?=.*[0-9])(?=.*[!@#$%^&*-_])[A-Za-z0-9!@#$%^&*-_]{6,}"
+                            title="Password must contain at least 6 characters, at least one number and at least one special character"
                             class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="password"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Password</label>
                     </div>
                     <!-- confirm password -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="confirm-password" type="password" name="confirm-password" required placeholder="confirm-password" autocomplete="new-password"
+                        <input id="confirm-password" type="password" name="confirm-password" required
+                            placeholder="confirm-password" autocomplete="new-password" onfocus="removeConfirmPasswordError()"
                             class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="confirm-password"
-                            class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Confirm password</label>
+                            class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Confirm
+                            password</label>
+                        <span id="confirm-password-error" class="text-red-500 text-xs flex left-[1.1rem] absolute"></span>
                     </div>
-                    
                 </div>
 
                 <!-- register button -->
                 <div class="flex justify-center mt-4">
-                    <button type="submit" class="flex justify-center border border-[#1F375B] hover:bg-[#276792]/60 transition-all text-[#1F375B] p-2 w-10/12 max-w-[300px] font-medium">REGISTER 
+                    <button type="submit"
+                        class="flex justify-center border border-[#1F375B] hover:bg-[#276792]/60 transition-all text-[#1F375B] p-2 w-10/12 max-w-[300px] font-medium">REGISTER
                         <span class="material-symbols-outlined ml-1">
                             person_add
                         </span>
@@ -85,9 +103,11 @@
                 </div>
             </form>
 
-            <p class="text-[#1F375B] text-center my-4">Already have an account? <a href="login.html" class="underline font-semibold">Login</a></p>
+            <p class="text-[#1F375B] text-center my-4">Already have an account? <a href="login.html"
+                    class="underline font-semibold">Login</a></p>
         </section>
     </main>
 </body>
 <script src="assets/js/register.js"></script>
+
 </html>
