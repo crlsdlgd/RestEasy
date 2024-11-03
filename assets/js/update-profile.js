@@ -1,4 +1,4 @@
-import User from "./class/user";
+import User from "./class/User";
 
 document.addEventListener('DOMContentLoaded', () => {
     const userLogged = JSON.parse(localStorage.getItem('userLogged'));

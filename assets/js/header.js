@@ -1,4 +1,4 @@
-import User from "./class/user";
+import User from "./class/User";
 
 document.addEventListener('DOMContentLoaded', () => {
     const userLogged = JSON.parse(localStorage.getItem('userLogged'));
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         userLogged.birthDate
     )
 
-    document.getElementById('user-name').innerHTML = `${user.firstName} ${user.lastName}`
+    document.getElementById('user-name').innerHTML = `${user.firstName} ${user.lastName}`;
 })
 
 function logout() {

@@ -24,7 +24,7 @@
             class="mx-auto rounded-3xl flex flex-col items-center mt-10 xs:w-full sm:w-3/4 lg:w-2/3 lg:max-w-[800px]">
             <h3 class="text-center bold text-3xl text-[#1F375B] mt-4">Sign Up</h3>
 
-            <form class="w-11/12 " id="register-form" onsubmit="submitRegister(event)" >
+            <form class="w-11/12 " id="register-form" >
                 <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center">
                     <!-- First name -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
@@ -73,7 +73,7 @@
                 <div class="flex flex-col m-4 gap-4 xs:flex-row xs:m-4 xs:h-8 justify-center" id="passwords-container">
                     <!-- password -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
-                        <input id="password" type="password" name="password" required placeholder="password" onfocus="removeConfirmPasswordError()"
+                        <input id="password" type="password" name="password" required placeholder="password"
                             autocomplete="new-password" pattern="(?=.*[0-9])(?=.*[!@#$%^&*-_])[A-Za-z0-9!@#$%^&*-_]{6,}"
                             title="Password must contain at least 6 characters, at least one number and at least one special character"
                             class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
@@ -83,7 +83,7 @@
                     <!-- confirm password -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
                         <input id="confirm-password" type="password" name="confirm-password" required
-                            placeholder="confirm-password" autocomplete="new-password" onfocus="removeConfirmPasswordError()"
+                            placeholder="confirm-password" autocomplete="new-password"
                             class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="confirm-password"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Confirm
@@ -108,6 +108,6 @@
         </section>
     </main>
 </body>
-<script src="assets/js/register.js"></script>
+<script src="assets/js/register.js" type="module"></script>
 
 </html>

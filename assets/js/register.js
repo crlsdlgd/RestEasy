@@ -1,26 +1,26 @@
+import User from "./class/User";
 
+document.getElementById('register-form').addEventListener('submit', (event) => {
+    submitRegister(event);
+})
 const submitRegister = (event) => {
     event.preventDefault();//evita que se recarge la pagina por defecto
     const form = event.target;
 
-    const user = {
-        firstName: form.elements['first-name'].value,
-        lastName: form.elements['last-name'].value,
-        birthDate: form.elements['birth-date'].value,
-        email: form.elements['email'].value,
-        password: form.elements['password'].value,
-        confirmPassword: form.elements['confirm-password'].value,
-    }
+    const user = new User(
+        form.elements['email'].value,
+        form.elements['password'].value,
+        form.elements['first-name'].value,
+        form.elements['last-name'].value,
+        form.elements['birth-date'].value
+    );
+    const confirmPassword = form.elements['confirm-password'].value;
 
     const users = JSON.parse(localStorage.getItem('users'));
 
-    if (validatePasswords(user.password, user.confirmPassword)) {
+    if (validatePasswords(user.password, confirmPassword)) {
         if (users == null) {
-            // const arrayUsers = [];
-            // arrayUsers.push(user);
-            // localStorage.setItem('users', JSON.stringify(arrayUsers));
             localStorage.setItem('users', JSON.stringify([user]));
-
         } else if (!validateUniqueEmail(users, user.email)) {
             users.push(user);
             localStorage.setItem('users', JSON.stringify(users));
@@ -40,13 +40,6 @@ function validatePasswords(password, confirmPassword) {
     return true;
 }
 
-const removeConfirmPasswordError = () => {
-    document.getElementById('confirm-password-error').innerHTML = '';
-    document.getElementById('password').style.border = 'none';
-    document.getElementById('confirm-password').style.border = 'none';
-    document.getElementById('passwords-container').style.margin = '1rem';
-}
-
 function validateUniqueEmail(users, email) {
     const user = users.find((item) => item.email == email);
     if (user != undefined) {
@@ -58,6 +51,22 @@ function validateUniqueEmail(users, email) {
     return false;
 }
 
+document.getElementById('confirm-password').addEventListener('input', () => {
+    removeConfirmPasswordError();
+    validatePasswords(document.getElementById('password').value,
+        document.getElementById('confirm-password').value);
+})
+
+document.getElementById('email').addEventListener('input', () => {
+    removeUniqueEmailError();
+    validateUniqueEmail(JSON.parse(localStorage.getItem('users')), document.getElementById('email').value);
+})
+const removeConfirmPasswordError = () => {
+    document.getElementById('confirm-password-error').innerHTML = '';
+    document.getElementById('password').style.border = 'none';
+    document.getElementById('confirm-password').style.border = 'none';
+    document.getElementById('passwords-container').style.margin = '1rem';
+}
 const removeUniqueEmailError = () => {
     document.getElementById('email-error').innerHTML = '';
     document.getElementById('email').style.border = 'none';
