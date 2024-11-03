@@ -3,7 +3,7 @@ section {
     background: rgba(255, 255, 255, 0.5);
     /* box-shadow: 24px 24px 39px #c1cfdf,
         -24px -24px 39px #e7f7ff; */
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
