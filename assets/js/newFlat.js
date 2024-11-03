@@ -1,7 +1,18 @@
-import Flat from "./class/flat";
+import Flat from "./class/Flat";
 document.getElementById('new-flat-form').addEventListener('submit', (event) => {
     submitNewFlat(event);
-})
+});
+
+const rentPrice = document.getElementById('rent-price');
+
+rentPrice.addEventListener('blur', () => {
+    console.log('price');
+    const price = parseFloat(rentPrice.value);
+    if (!isNaN(price)) {
+        rentPrice.value = price.toFixed(2);
+    }
+});
+
 
 const submitNewFlat = (event) => {
     event.preventDefault();

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         userLogged.birthDate
     )
 
-    document.getElementById('user-name').innerHTML = `${user.firstName} ${user.lastName}`;
+    document.getElementById('user-name').innerHTML = `${user.firstName}`;
 })
 
 function logout() {
