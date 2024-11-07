@@ -4,3 +4,31 @@
 	font-weight: 700;
 	font-style: normal;
 }
+
+section {
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.5);
+	/* box-shadow: 24px 24px 39px #c1cfdf,
+        -24px -24px 39px #e7f7ff; */
+	/* backdrop-filter: blur(20px); */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-inside {
+	/* border-radius: 50px; */
+	background: transparent;
+	box-shadow: inset 11px 11px 8px #d3f0f0,
+		inset -11px -11px 8px #e5ffff;
+}
+
+/* Para navegadores basados en Webkit (Chrome, Safari, Edge, Opera) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
