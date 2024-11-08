@@ -99,55 +99,55 @@
 	</header>
 
 	<main class="items-center w-5/6 mx-auto lg:w-4/5" style="min-height: calc(100vh - 120px);">
-
+		<h3 class="bold text-2xl text-[#1F375B]">All Flats</h3>
 		<!-- filters -->
 		<section class="rounded-lg py-4 px-2 my-4">
 			<label for="citySelect" class="text-[#1F375B] font-semibold text-xl">Find by</label>
-			<form action="" class="flex flex-col gap-4 md:flex-row">
+			<form action="" class="flex flex-col gap-4 md:flex-row" id="filter-form">
 				<!-- city -->
 				<div class="flex gap-3 flex-col w-full md:w-1/4 border border-[#1F375B] rounded p-1">
 					<label for="citySelect" class="text-[#1F375B] font-semibold">City</label>
 					<div class="relative w-full">
 						<input id="city" type="text" name="city" placeholder="City" autocomplete="off"
-							class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF] shadow-xl border border-slate-400">
+							class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-105 transition-all focus:bg-[#F9FBFF] shadow-xl border border-slate-400">
 						<label for="city"
 							class="absolute left-[0.7rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Filter by city</label>
 					</div>
 				</div>
 				<!-- rent price -->
 				<div class="flex gap-3 flex-col w-full md:w-1/4 border border-[#1F375B] rounded p-1">
-					<label for="minPrice" class="text-[#1F375B] font-semibold">Rent Price</label>
+					<label for="min-price" class="text-[#1F375B] font-semibold">Rent Price</label>
 					<div class="flex gap-2 flex-row items-center">
 						<div class="relative w-full">
-							<input id="minPrice" type="number" name="minPrice" placeholder="Min price" autocomplete="off"
+							<input id="min-price" type="number" name="min-price" placeholder="Min price" autocomplete="off"
 								class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF] shadow-xl border border-slate-400">
-							<label for="minPrice"
+							<label for="min-price"
 								class="absolute left-[0.7rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Min</label>
 						</div>
 						<p class="text-[#1F375B] flex flex-row">to</p>
 						<div class="relative w-full">
-							<input id="maxPrice" type="number" name="maxPrice" placeholder="Max price" autocomplete="off"
+							<input id="max-price" type="number" name="max-price" placeholder="Max price" autocomplete="off"
 								class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF] shadow-xl border border-slate-400">
-							<label for="maxPrice"
+							<label for="max-price"
 								class="absolute left-[0.7rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B] ">Max</label>
 						</div>
 					</div>
 				</div>
 				<!-- area size -->
 				<div class="flex gap-3 flex-col w-full md:w-1/4 border border-[#1F375B] rounded p-1">
-					<label for="minPrice" class="text-[#1F375B] font-semibold">Area Size</label>
+					<label for="min-area" class="text-[#1F375B] font-semibold">Area Size</label>
 					<div class=" relative flex gap-2 flex-row items-center">
 						<div class="relative w-full">
-							<input id="minArea" type="number" name="minArea" placeholder="Min Area" autocomplete="off"
+							<input id="min-area" type="number" name="min-area" placeholder="Min Area" autocomplete="off"
 								class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF] shadow-xl border border-slate-400">
-							<label for="minArea"
+							<label for="min-area"
 								class="absolute left-[0.7rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Min</label>
 						</div>
 						<p class="text-[#1F375B] flex flex-row">to</p>
 						<div class="relative w-full">
-							<input id="maxArea" type="number" name="maxArea" placeholder="Max Area" autocomplete="off"
+							<input id="max-area" type="number" name="max-area" placeholder="Max Area" autocomplete="off"
 								class="peer placeholder-transparent w-full text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF] shadow-xl border border-slate-400">
-							<label for="maxArea"
+							<label for="max-area"
 								class="absolute left-[0.7rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Max</label>
 						</div>
 					</div>
@@ -162,35 +162,86 @@
 				</div>
 			</form>
 		</section>
+		<!-- table -->
+		<!-- <section class="mb-10 botton-0 bg-transparent shadow-none overflow-x-auto overflow-y-hidden rounded-none">
+			<table class="min-w-full border border-black border-collapse bg-white bg-opacity-50" id="all-flats-table">
+				<thead>
+					<tr>
+						<th class="text-[#1F375B]">
+							<div class="flex items-center justify-center">
+								City
+								<span class="material-symbols-outlined cursor-pointer">
+									swap_vert
+								</span>
+							</div>
+						</th>
+						<th class="text-[#1F375B]">Street Name</th>
+						<th class="text-[#1F375B]">Street Number</th>
+						<th class="text-[#1F375B]">
+							<div class="flex items-center justify-center">
+								Area Size
+								<span class="material-symbols-outlined cursor-pointer">
+									swap_vert
+								</span>
+							</div>
+						</th>
+						<th class="text-[#1F375B]">Has AC</th>
+						<th class="text-[#1F375B]">Year build</th>
+						<th class="text-[#1F375B]">
+							<div class="flex items-center justify-center">
+								Rent Price
+								<span class="material-symbols-outlined cursor-pointer">
+									swap_vert
+								</span>
+							</div>
+						</th>
+						<th class="text-[#1F375B]">Date Available</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</section> -->
 
-		<section class="bg-transparent shadow-none grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 mb-10 botton-0">
-			<div>
-				<div class="card shadow-xl bg-white rounded-xl overflow-hidden">
-					<img src="./assets/images/green.jpg" alt="foto" height="200" width="100%">
-					<h3>Flat title</h3>
-					<p>Location</p>
-					<p>Price</p>
-					<p>Rating</p>
-				</div>
-			</div>
-			<div>
-				<div class="card shadow-xl bg-white rounded-xl overflow-hidden">
-					<img src="./assets/images/green.jpg" alt="foto" height="200" width="100%">
-					<h3>Flat title</h3>
-					<p>Location</p>
-					<p>Price</p>
-					<p>Rating</p>
-				</div>
-			</div>
-			<div>
-				<div class="card shadow-xl bg-white rounded-xl overflow-hidden">
-					<img src="./assets/images/green.jpg" alt="foto" height="200" width="100%">
-					<h3>Flat title</h3>
-					<p>Location</p>
-					<p>Price</p>
-					<p>Rating</p>
-				</div>
-			</div>
+		<section class="mb-10 botton-0 bg-transparent shadow-none overflow-x-auto overflow-y-hidden rounded-none">
+			<table class="min-w-full border border-[#1F375B] border-collapse bg-white bg-opacity-20" id="all-flats-table">
+				<thead >
+					<tr class="bg-opacity-20">
+						<th class="text-[#1F375B] border border-[#1F375B]">
+							<div class="flex items-center justify-center">
+								City
+								<span class="material-symbols-outlined cursor-pointer">
+									swap_vert
+								</span>
+							</div>
+						</th>
+						<th class="text-[#1F375B] border border-[#1F375B]">Street Name</th>
+						<th class="text-[#1F375B] border border-[#1F375B]">Street Number</th>
+						<th class="text-[#1F375B] border border-[#1F375B]">
+							<div class="flex items-center justify-center">
+								Area Size
+								<span class="material-symbols-outlined cursor-pointer">
+									swap_vert
+								</span>
+							</div>
+						</th>
+						<th class="text-[#1F375B] border border-[#1F375B]">Has AC</th>
+						<th class="text-[#1F375B] border border-[#1F375B]">Year build</th>
+						<th class="text-[#1F375B] border border-[#1F375B]">
+							<div class="flex items-center justify-center">
+								Rent Price
+								<span class="material-symbols-outlined cursor-pointer">
+									swap_vert
+								</span>
+							</div>
+						</th>
+						<th class="text-[#1F375B] border border-[#1F375B]">Date Available</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
 		</section>
 	</main>
 
@@ -239,4 +290,5 @@
 <script src="assets/js/home.js"></script>
 <script src="assets/js/index.js"></script>
 <script src="assets/js/header.js" type="module"></script>
+<script src="assets/js/allFlats.js"></script>
 </html>

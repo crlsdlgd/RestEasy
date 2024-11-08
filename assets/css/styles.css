@@ -21,14 +21,57 @@ section {
 		inset -11px -11px 8px #e5ffff;
 }
 
-/* Para navegadores basados en Webkit (Chrome, Safari, Edge, Opera) */
+/* Quitar flechas de input number para navegadores basados en Webkit (Chrome, Safari, Edge, Opera) */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
 
-/* Para Firefox */
+/* Quitar flechas de input number para Firefox */
 input[type="number"] {
 	-moz-appearance: textfield;
+}
+
+tBody td {
+	border-color: #1F375B;
+	border-width: 0 0 1px 0;
+}
+
+tbody tr:nth-child(even) {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+tbody tr:nth-child(odd) {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo general para el scrollbar */
+::-webkit-scrollbar {
+	width: 12px;
+	/* Ancho del scrollbar */
+	height: 12px;
+	/* Altura del scrollbar en caso de scroll horizontal */
+}
+
+/* Estilo del fondo del scrollbar */
+::-webkit-scrollbar-track {
+	background-color: #f1f1f1;
+	/* Color de fondo */
+	border-radius: 10px;
+	/* Bordes redondeados */
+}
+
+/* Estilo del "thumb" (la barra deslizante) */
+::-webkit-scrollbar-thumb {
+	background-color: #888;
+	/* Color del thumb */
+	border-radius: 10px;
+	/* Bordes redondeados */
+}
+
+/* Estilo del thumb cuando se pasa el mouse sobre él */
+::-webkit-scrollbar-thumb:hover {
+	background-color: #555;
+	/* Color del thumb al pasar el mouse */
 }
