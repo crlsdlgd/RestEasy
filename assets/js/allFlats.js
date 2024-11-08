@@ -1,12 +1,17 @@
 
+let filteredFlats;
+let citySortAsc = false;
+let areaSortAsc = false;
+let priceSortAsc = false;
 document.getElementById('filter-form').addEventListener('submit', (event) => {
     filterFlats(event);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const flats = JSON.parse(localStorage.getItem('flats'));
-    renderTable(flats);
+    filteredFlats = JSON.parse(localStorage.getItem('flats'));
+    renderTable();
 });
+
 
 function filterFlats(event) {
     event.preventDefault();
@@ -17,7 +22,7 @@ function filterFlats(event) {
     let maxArea = document.getElementById('max-area').value;
 
     const flats = JSON.parse(localStorage.getItem('flats'));
-    let filteredFlats = flats;
+    filteredFlats = flats;
     //Asignamos valores por defecto si no se han rellenado los filtros
     maxPrice ? maxPrice : maxPrice = Infinity;
     maxArea ? maxArea : maxArea = Infinity;
@@ -39,10 +44,10 @@ function filterFlats(event) {
         return true;
     });
     // console.log('Filtered flats:', filteredFlats);
-    renderTable(filteredFlats);
+    renderTable();
 };
 
-const renderTable = (flats) => {
+const renderTable = (flats = filteredFlats) => {
     const table = document.getElementById('all-flats-table');
     const tableBody = table.getElementsByTagName('tbody')[0];
     tableBody.innerHTML = '';
@@ -60,3 +65,36 @@ const renderTable = (flats) => {
         tableBody.appendChild(row);
     }
 };
+// Filtro que alterna entre orden ascendente y descendente 
+document.getElementById('sort-city').addEventListener('click', () => {
+    if (citySortAsc) {
+        filteredFlats.sort((a, b) => b.city.localeCompare(a.city));
+        citySortAsc = false;
+    } else {
+        filteredFlats.sort((a, b) => a.city.localeCompare(b.city));
+        citySortAsc = true;
+    }
+    renderTable();
+});
+
+document.getElementById('sort-area').addEventListener('click', () => {
+    if (areaSortAsc) {
+        filteredFlats.sort((a, b) => b.areaSize - a.areaSize);
+        areaSortAsc = false;
+    } else {
+        filteredFlats.sort((a, b) => a.areaSize - b.areaSize);
+        areaSortAsc = true;
+    }
+    renderTable();
+});
+
+document.getElementById('sort-price').addEventListener('click', () => {
+    if (priceSortAsc) {
+        filteredFlats.sort((a, b) => b.rentPrice - a.rentPrice);
+        priceSortAsc = false;
+    } else {
+        filteredFlats.sort((a, b) => a.rentPrice - b.rentPrice);
+        priceSortAsc = true;
+    }
+    renderTable();
+});
