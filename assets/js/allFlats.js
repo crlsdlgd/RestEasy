@@ -53,15 +53,56 @@ const renderTable = (flats = filteredFlats) => {
     tableBody.innerHTML = '';
     for (const flat of flats) {
         const row = document.createElement('tr');
-        row.innerHTML = `
-        <td class="text-[#1F375B]">${flat.city}</td>
-        <td class="text-[#1F375B]">${flat.streetName}</td>
-        <td class="text-[#1F375B]">${flat.streetNumber}</td>
-        <td class="text-[#1F375B]">${flat.areaSize}</td>
-        <td class="text-[#1F375B]">${flat.hasAC}</td>
-        <td class="text-[#1F375B]">${flat.yearBuild}</td>
-        <td class="text-[#1F375B]">${flat.rentPrice}</td>
-        <td class="text-[#1F375B]">${flat.dateAvailable}</td>`;
+        // row.innerHTML = `
+        // <td class="text-[#1F375B]">${flat.city}</td>
+        // <td class="text-[#1F375B]">${flat.streetName}</td>
+        // <td class="text-[#1F375B]">${flat.streetNumber}</td>
+        // <td class="text-[#1F375B]">${flat.areaSize}</td>
+        // <td class="text-[#1F375B]">${flat.hasAC}</td>
+        // <td class="text-[#1F375B]">${flat.yearBuild}</td>
+        // <td class="text-[#1F375B]">${flat.rentPrice}</td>
+        // <td class="text-[#1F375B]">${flat.dateAvailable}</td>`;
+
+        // city
+        const tdCity = document.createElement('td');
+        tdCity.textContent = flat.city;
+        row.appendChild(tdCity);
+        // street name
+        const tdStreetName = document.createElement('td');
+        tdStreetName.textContent = flat.streetName;
+        row.appendChild(tdStreetName);
+        // street number
+        const tdStreetNumber = document.createElement('td');
+        tdStreetNumber.textContent = flat.streetNumber;
+        row.appendChild(tdStreetNumber);
+        // area size
+        const tdAreaSize = document.createElement('td');
+        tdAreaSize.textContent = flat.areaSize;
+        row.appendChild(tdAreaSize);
+        // has AC
+        const tdHasAC = document.createElement('td');
+        tdHasAC.textContent = flat.hasAC;
+        row.appendChild(tdHasAC);
+        // year build
+        const tdYearBuild = document.createElement('td');
+        tdYearBuild.textContent = flat.yearBuild;
+        row.appendChild(tdYearBuild);
+        // rent price
+        const tdRentPrice = document.createElement('td');
+        tdRentPrice.textContent = flat.rentPrice;
+        row.appendChild(tdRentPrice);
+        // date available
+        const tdDateAvailable = document.createElement('td');
+        tdDateAvailable.textContent = flat.dateAvailable;
+        row.appendChild(tdDateAvailable);
+        // Favorite Button
+        const tdFavorite = document.createElement('td');
+        const favoriteButton = document.createElement('button');
+        // favoriteButton.classList.add('bg-[#1F375B]', 'text-white', 'py-2', 'px-4', 'rounded', 'hover:bg-[#1F375B]', 'hover:text-white');
+        favoriteButton.onclick = (e) => toggleFavorite(flat.id, e);
+        favoriteButton.textContent = (checkFlatFavorite(flat.id)) ? 'Remove Favorite' : 'Add Favorite';
+        tdFavorite.appendChild(favoriteButton);
+        row.appendChild(tdFavorite);
         tableBody.appendChild(row);
     }
 };
@@ -98,3 +139,26 @@ document.getElementById('sort-price').addEventListener('click', () => {
     }
     renderTable();
 });
+
+const toggleFavorite = (id, e) => {
+    const userLogged = JSON.parse(localStorage.getItem('userLogged'));
+    const favoriteFlats = userLogged.favoriteFlats;
+    const users = JSON.parse(localStorage.getItem('users'));
+    if (checkFlatFavorite(id, e)) {
+        favoriteFlats.splice(favoriteFlats.indexOf(id), 1);
+    } else {
+        favoriteFlats.push(id);
+    };
+    userLogged.favoriteFlats = favoriteFlats;
+    e.target.textContent = (checkFlatFavorite(id)) ? 'Add Favorite' : 'Remove Favorite';
+    localStorage.setItem('userLogged', JSON.stringify(userLogged));
+    const index = users.findIndex((item) => item.email == userLogged.email);
+    users[index] = userLogged;
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+const checkFlatFavorite = (id) => {
+    const userLogged = JSON.parse(localStorage.getItem('userLogged'));
+    const favoriteFlats = userLogged.favoriteFlats;
+    return favoriteFlats.includes(id);
+}
