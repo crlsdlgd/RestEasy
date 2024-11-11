@@ -31,7 +31,7 @@ const submitUpdateProfile = (event) => {
         form.elements['last-name'].value,
         form.elements['birth-date'].value
     );
-    console.log('User', user);
+    // console.log('User', user);
 
     const users = JSON.parse(localStorage.getItem('users'));
     const index = users.findIndex((item) => item.email == user.email);
