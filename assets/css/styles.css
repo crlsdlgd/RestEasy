@@ -33,7 +33,7 @@ input[type="number"] {
 	-moz-appearance: textfield;
 }
 
-tBody td {
+tBody td , tBody th {
 	border-color: #1F375B;
 	border-width: 0 0 1px 0;
 }
