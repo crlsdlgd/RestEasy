@@ -37,9 +37,18 @@ const submitNewFlat = (event) => {
                 flats.push(flat);
                 localStorage.setItem('flats', JSON.stringify(flats));
             }
+            Swal.fire({
+                // position: "top-end",
+                icon: "success",
+                title: "Flat registered successfully.",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            document.getElementById('new-flat-form').reset();
         }
     }
 }
+
 
 const valdateYearBuild = () => {
     const yearBuild = document.getElementById('year-build');

@@ -24,6 +24,16 @@ const submitRegister = (event) => {
         } else if (!validateUniqueEmail(users, user.email)) {
             users.push(user);
             localStorage.setItem('users', JSON.stringify(users));
+            Swal.fire({
+                // position: "top-end",
+                icon: "success",
+                title: "Registration successful! Please log in to continue.",
+                showConfirmButton: false,
+                timer: 2000
+            });
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
         }
     }
 }

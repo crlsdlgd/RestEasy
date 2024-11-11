@@ -8,7 +8,9 @@ const toggleUserMenu = () => {
     userMenu.classList.toggle('hidden');
 }
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const [email] = document.getElementsByName('email');
-//     email.value = 'qwe@qwe.com';
-// })
+document.addEventListener('DOMContentLoaded', () => {
+    const userLogged = JSON.parse(localStorage.getItem('userLogged'));
+    if (!userLogged) {
+        window.location.href = 'login.html';
+    }
+});

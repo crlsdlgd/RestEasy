@@ -38,7 +38,16 @@ const submitUpdatePassword = (event) => {
             users[index] = user;
             localStorage.setItem('users', JSON.stringify(users));
             localStorage.setItem('userLogged', JSON.stringify(user));
-            window.location.href = 'index.html';
+            Swal.fire({
+                // position: "top-end",
+                icon: "success",
+                title: "Password updated successfully.",
+                showConfirmButton: false,
+                timer: 2000
+            });
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
         }
     }
 };

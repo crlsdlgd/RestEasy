@@ -39,7 +39,16 @@ const submitUpdateProfile = (event) => {
     localStorage.setItem('users', JSON.stringify(users));
     localStorage.setItem('userLogged', JSON.stringify(user));
 
-    window.location.href = 'index.html';
+    Swal.fire({
+        // position: "top-end",
+        icon: "success",
+        title: "Account updated successfully.",
+        showConfirmButton: false,
+        timer: 2000
+    });
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 2000);
 };
 
 document.addEventListener('DOMContentLoaded', () => {

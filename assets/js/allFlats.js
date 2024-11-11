@@ -53,15 +53,6 @@ const renderTable = (flats = filteredFlats) => {
     tableBody.innerHTML = '';
     for (const flat of flats) {
         const row = document.createElement('tr');
-        // row.innerHTML = `
-        // <td class="text-[#1F375B]">${flat.city}</td>
-        // <td class="text-[#1F375B]">${flat.streetName}</td>
-        // <td class="text-[#1F375B]">${flat.streetNumber}</td>
-        // <td class="text-[#1F375B]">${flat.areaSize}</td>
-        // <td class="text-[#1F375B]">${flat.hasAC}</td>
-        // <td class="text-[#1F375B]">${flat.yearBuild}</td>
-        // <td class="text-[#1F375B]">${flat.rentPrice}</td>
-        // <td class="text-[#1F375B]">${flat.dateAvailable}</td>`;
 
         // city
         const tdCity = document.createElement('td');
@@ -97,6 +88,7 @@ const renderTable = (flats = filteredFlats) => {
         row.appendChild(tdDateAvailable);
         // Favorite Button
         const tdFavorite = document.createElement('td');
+        tdFavorite.classList.add('text-center');
         const favoriteButton = document.createElement('button');
         favoriteButton.onclick = (e) => toggleFavorite(flat.id, e);
         // favoriteButton.textContent = (checkFlatFavorite(flat.id)) ? 'Remove Favorite' : 'Add Favorite';
