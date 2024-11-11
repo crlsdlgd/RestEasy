@@ -98,9 +98,15 @@ const renderTable = (flats = filteredFlats) => {
         // Favorite Button
         const tdFavorite = document.createElement('td');
         const favoriteButton = document.createElement('button');
-        // favoriteButton.classList.add('bg-[#1F375B]', 'text-white', 'py-2', 'px-4', 'rounded', 'hover:bg-[#1F375B]', 'hover:text-white');
         favoriteButton.onclick = (e) => toggleFavorite(flat.id, e);
-        favoriteButton.textContent = (checkFlatFavorite(flat.id)) ? 'Remove Favorite' : 'Add Favorite';
+        // favoriteButton.textContent = (checkFlatFavorite(flat.id)) ? 'Remove Favorite' : 'Add Favorite';
+        const redHeart = document.createElement('i');
+        redHeart.classList.add('fa-solid', 'fa-heart', 'text-red-500');
+        const grayHeart = document.createElement('i');
+        grayHeart.classList.add('fa-regular', 'fa-heart', 'text-gray-500');
+        checkFlatFavorite(flat.id) ? grayHeart.style.display = 'none' : redHeart.style.display = 'none';
+        favoriteButton.appendChild(redHeart);
+        favoriteButton.appendChild(grayHeart);
         tdFavorite.appendChild(favoriteButton);
         row.appendChild(tdFavorite);
         tableBody.appendChild(row);
@@ -144,13 +150,17 @@ const toggleFavorite = (id, e) => {
     const userLogged = JSON.parse(localStorage.getItem('userLogged'));
     const favoriteFlats = userLogged.favoriteFlats;
     const users = JSON.parse(localStorage.getItem('users'));
+    const button = e.currentTarget;
     if (checkFlatFavorite(id, e)) {
         favoriteFlats.splice(favoriteFlats.indexOf(id), 1);
+        button.children[0].style.display = 'none';
+        button.children[1].style.display = 'block';
     } else {
         favoriteFlats.push(id);
+        button.children[0].style.display = 'block';
+        button.children[1].style.display = 'none';
     };
     userLogged.favoriteFlats = favoriteFlats;
-    e.target.textContent = (checkFlatFavorite(id)) ? 'Add Favorite' : 'Remove Favorite';
     localStorage.setItem('userLogged', JSON.stringify(userLogged));
     const index = users.findIndex((item) => item.email == userLogged.email);
     users[index] = userLogged;
