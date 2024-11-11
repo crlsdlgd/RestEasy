@@ -3,6 +3,8 @@ let filteredFlats;
 let citySortAsc = false;
 let areaSortAsc = false;
 let priceSortAsc = false;
+let toggleView = true;
+
 document.getElementById('filter-form').addEventListener('submit', (event) => {
     filterFlats(event);
 });
@@ -13,6 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGrid();
 });
 
+
+document.getElementById('toggle-view').addEventListener('click', () => {
+    if (toggleView) {
+        document.getElementById('table-section-flats').style.display = 'none';
+        document.getElementById('all-flats-grid-container').style.display = 'grid';
+        toggleView = false;
+    } else {
+        document.getElementById('table-section-flats').style.display = 'block';
+        document.getElementById('all-flats-grid-container').style.display = 'none';
+        toggleView = true;
+    }
+})
 
 function filterFlats(event) {
     event.preventDefault();
@@ -46,6 +60,7 @@ function filterFlats(event) {
     });
     // console.log('Filtered flats:', filteredFlats);
     renderTable();
+    renderGrid();
 };
 
 const renderTable = (flats = filteredFlats) => {
@@ -115,6 +130,7 @@ document.getElementById('sort-city').addEventListener('click', () => {
         citySortAsc = true;
     }
     renderTable();
+    renderGrid();
 });
 
 document.getElementById('sort-area').addEventListener('click', () => {
@@ -126,6 +142,7 @@ document.getElementById('sort-area').addEventListener('click', () => {
         areaSortAsc = true;
     }
     renderTable();
+    renderGrid();
 });
 
 document.getElementById('sort-price').addEventListener('click', () => {
@@ -137,6 +154,7 @@ document.getElementById('sort-price').addEventListener('click', () => {
         priceSortAsc = true;
     }
     renderTable();
+    renderGrid();
 });
 
 const toggleFavorite = (id, e) => {
@@ -158,6 +176,8 @@ const toggleFavorite = (id, e) => {
     const index = users.findIndex((item) => item.email == userLogged.email);
     users[index] = userLogged;
     localStorage.setItem('users', JSON.stringify(users));
+    renderTable();
+    renderGrid();
 }
 
 const checkFlatFavorite = (id) => {
@@ -280,32 +300,29 @@ const renderGrid = (flats = filteredFlats) => {
         tbody.appendChild(trDateAvailable);
 
         //Favorite Button
-        // th.textContent = 'Street Number';
-        // td.textContent = flat.streetNumber;
-        // tr.appendChild(th);
-        // tr.appendChild(td);
-        // tbody.appendChild(tr);
+        const trFavorite = document.createElement('tr');
+        trFavorite.classList.add('flex')
+        const thFavorite = document.createElement('th');
+        thFavorite.classList.add('flex-1');
+        thFavorite.textContent = 'Favorite';
+        trFavorite.appendChild(thFavorite);
+        const tdFavorite = document.createElement('td');
+        tdFavorite.classList.add('flex-1');
+        const favoriteButton = document.createElement('button');
+        favoriteButton.onclick = (e) => toggleFavorite(flat.id, e);
+        const redHeart = document.createElement('i');
+        redHeart.classList.add('fa-solid', 'fa-heart', 'text-red-500');
+        const grayHeart = document.createElement('i');
+        grayHeart.classList.add('fa-regular', 'fa-heart', 'text-gray-500');
+        checkFlatFavorite(flat.id) ? grayHeart.style.display = 'none' : redHeart.style.display = 'none';
+        favoriteButton.appendChild(redHeart);
+        favoriteButton.appendChild(grayHeart);
+        tdFavorite.appendChild(favoriteButton);
+        trFavorite.appendChild(tdFavorite);
+        tbody.appendChild(trFavorite);
 
         table.appendChild(tbody);
         divContainer.appendChild(table);
         gridContainer.appendChild(divContainer);
-
-
-        // // Favorite Button
-        // const tdFavorite = document.createElement('td');
-        // tdFavorite.classList.add('text-center');
-        // const favoriteButton = document.createElement('button');
-        // favoriteButton.onclick = (e) => toggleFavorite(flat.id, e);
-        // // favoriteButton.textContent = (checkFlatFavorite(flat.id)) ? 'Remove Favorite' : 'Add Favorite';
-        // const redHeart = document.createElement('i');
-        // redHeart.classList.add('fa-solid', 'fa-heart', 'text-red-500');
-        // const grayHeart = document.createElement('i');
-        // grayHeart.classList.add('fa-regular', 'fa-heart', 'text-gray-500');
-        // checkFlatFavorite(flat.id) ? grayHeart.style.display = 'none' : redHeart.style.display = 'none';
-        // favoriteButton.appendChild(redHeart);
-        // favoriteButton.appendChild(grayHeart);
-        // tdFavorite.appendChild(favoriteButton);
-        // row.appendChild(tdFavorite);
-        // tableBody.appendChild(row);
     }
 };

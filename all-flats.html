@@ -154,18 +154,26 @@
 						</div>
 					</div>
 				</div>
-				<div class="flex gap-3 flex-col w-full md:w-1/4 justify-center items-center">
+				<div class="flex gap-3 w-full md:w-1/4 justify-center items-center">
 					<button type="submit"
-						class="flex justify-center border border-[#1F375B] hover:bg-[#276792]/60 text-[#1F375B] p-2 transition-all w-full max-w-[300px] font-medium">SEARCH
+						class="flex-1 flex justify-center border border-[#1F375B] hover:bg-[#276792]/60 text-[#1F375B] p-2 transition-all w-full max-w-[300px] font-medium">
 						<span class="material-symbols-outlined">
 							search
+						</span>
+					</button>
+					<button id="toggle-view"
+						class="flex-1 flex justify-center border border-[#1F375B] hover:bg-[#276792]/60 text-[#1F375B] p-2 transition-all w-full max-w-[300px] font-medium">
+						<span class="material-symbols-outlined">
+							<span class="material-symbols-outlined">
+								grid_view
+							</span>
 						</span>
 					</button>
 				</div>
 			</form>
 		</section>
 		<!-- flats table -->
-		<section class="mb-10 botton-0 bg-transparent shadow-none overflow-x-auto overflow-y-hidden rounded-none">
+		<section class="mb-10 botton-0 bg-transparent shadow-none overflow-x-auto overflow-y-hidden rounded-none" id="table-section-flats">
 			<table class="min-w-full border border-[#1F375B] border-collapse bg-white bg-opacity-20" id="all-flats-table">
 				<thead class="bg-white bg-opacity-70">
 					<tr class="">
@@ -207,7 +215,7 @@
 			</table>
 		</section>
 		<!-- flats grid -->
-		<section class="grid  grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 mb-10 botton-0 bg-transparent shadow-none overflow-x-auto overflow-y-hidden rounded-none" id="all-flats-grid-container">
+		<section class="hidden grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 mb-10 botton-0 bg-transparent shadow-none overflow-x-auto overflow-y-hidden rounded-none" id="all-flats-grid-container">
 
 		</section>
 	</main>

@@ -14,37 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function filterFlats() {
-    // event.preventDefault();
-    // const city = document.getElementById('city').value;
-    // let minPrice = document.getElementById('min-price').value;
-    // let maxPrice = document.getElementById('max-price').value;
-    // let minArea = document.getElementById('min-area').value;
-    // let maxArea = document.getElementById('max-area').value;
-
-    // const flats = JSON.parse(localStorage.getItem('flats'));
-    // filteredFlats = flats;
-    // //Asignamos valores por defecto si no se han rellenado los filtros
-    // maxPrice ? maxPrice : maxPrice = Infinity;
-    // maxArea ? maxArea : maxArea = Infinity;
-    // minPrice ? minPrice : minPrice = 0;
-    // minArea ? minArea : minArea = 0;
-
-    // filteredFlats = filteredFlats.filter((flat) => {
-    //     if (city) {
-    //         if (flat.city !== city) {
-    //             return false;
-    //         }
-    //     }
-    //     if (flat.rentPrice < minPrice || flat.rentPrice > maxPrice) {
-    //         return false;
-    //     }
-    //     if (flat.areaSize < minArea || flat.areaSize > maxArea) {
-    //         return false;
-    //     }
-    //     return true;
-    // });
-    // // console.log('Filtered flats:', filteredFlats);
-    // renderTable();
     const userLogged = JSON.parse(localStorage.getItem('userLogged'));
     const favoriteFlats = userLogged.favoriteFlats;
     filteredFlats = filteredFlats.filter((flat) => favoriteFlats.includes(flat.id));
