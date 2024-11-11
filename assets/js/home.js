@@ -3,6 +3,7 @@ let filteredFlats;
 let citySortAsc = false;
 let areaSortAsc = false;
 let priceSortAsc = false;
+let toggleView = true;
 // document.getElementById('filter-form').addEventListener('submit', (event) => {
 //     filterFlats(event);
 // });
@@ -10,14 +11,27 @@ let priceSortAsc = false;
 document.addEventListener('DOMContentLoaded', () => {
     filteredFlats = JSON.parse(localStorage.getItem('flats'));
     filterFlats();
+    renderGrid();
 });
 
+document.getElementById('toggle-view').addEventListener('click', () => {
+    if (toggleView) {
+        document.getElementById('table-section-flats').style.display = 'none';
+        document.getElementById('all-flats-grid-container').style.display = 'grid';
+        toggleView = false;
+    } else {
+        document.getElementById('table-section-flats').style.display = 'block';
+        document.getElementById('all-flats-grid-container').style.display = 'none';
+        toggleView = true;
+    }
+})
 
 function filterFlats() {
     const userLogged = JSON.parse(localStorage.getItem('userLogged'));
     const favoriteFlats = userLogged.favoriteFlats;
     filteredFlats = filteredFlats.filter((flat) => favoriteFlats.includes(flat.id));
     renderTable();
+    renderGrid();
 };
 
 const renderTable = (flats = filteredFlats) => {
@@ -87,6 +101,7 @@ document.getElementById('sort-city').addEventListener('click', () => {
         citySortAsc = true;
     }
     renderTable();
+    renderGrid();
 });
 
 document.getElementById('sort-area').addEventListener('click', () => {
@@ -98,6 +113,7 @@ document.getElementById('sort-area').addEventListener('click', () => {
         areaSortAsc = true;
     }
     renderTable();
+    renderGrid();
 });
 
 document.getElementById('sort-price').addEventListener('click', () => {
@@ -109,6 +125,7 @@ document.getElementById('sort-price').addEventListener('click', () => {
         priceSortAsc = true;
     }
     renderTable();
+    renderGrid();
 });
 
 const toggleFavorite = (id, e) => {
@@ -138,3 +155,144 @@ const checkFlatFavorite = (id) => {
     const favoriteFlats = userLogged.favoriteFlats;
     return favoriteFlats.includes(id);
 }
+
+const renderGrid = (flats = filteredFlats) => {
+    const gridContainer = document.getElementById('all-flats-grid-container');
+    gridContainer.innerHTML = '';
+    for (const flat of flats) {
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('card', 'shadow', 'overflow-hidden');
+        const table = document.createElement('table');
+        const tbody = document.createElement('tbody');
+        table.classList.add('bg-white', 'bg-opacity-20', 'w-full', 'text-[#1F375B]', 'border', 'border-[#1F375B]', 'table-rounded', 'table-fixed');
+        // City
+        const trCity = document.createElement('tr');
+        trCity.classList.add('flex')
+        const thCity = document.createElement('th');
+        thCity.classList.add('flex-1');
+        thCity.textContent = 'City';
+        trCity.appendChild(thCity);
+        const tdCity = document.createElement('td');
+        tdCity.classList.add('flex-1');
+        tdCity.textContent = flat.city;
+        trCity.appendChild(tdCity);
+        tbody.appendChild(trCity);
+
+        // Street Name
+        const trStreetName = document.createElement('tr');
+        trStreetName.classList.add('flex')
+        const thStreetName = document.createElement('th');
+        thStreetName.classList.add('flex-1');
+        thStreetName.textContent = 'Street Name';
+        trStreetName.appendChild(thStreetName);
+        const tdStreetName = document.createElement('td');
+        tdStreetName.classList.add('flex-1');
+        tdStreetName.textContent = flat.streetName;
+        trStreetName.appendChild(tdStreetName);
+        tbody.appendChild(trStreetName);
+
+        // //Street Number
+        const trStreetNumber = document.createElement('tr');
+        trStreetNumber.classList.add('flex')
+        const thStreetNumber = document.createElement('th');
+        thStreetNumber.classList.add('flex-1');
+        thStreetNumber.textContent = 'Street Number';
+        trStreetNumber.appendChild(thStreetNumber);
+        const tdStreetNumber = document.createElement('td');
+        tdStreetNumber.classList.add('flex-1');
+        tdStreetNumber.textContent = flat.streetNumber;
+        trStreetNumber.appendChild(tdStreetNumber);
+        tbody.appendChild(trStreetNumber);
+
+        // //Area Size
+        const trAreaSize = document.createElement('tr');
+        trAreaSize.classList.add('flex')
+        const thAreaSize = document.createElement('th');
+        thAreaSize.classList.add('flex-1');
+        thAreaSize.textContent = 'Area Size';
+        trAreaSize.appendChild(thAreaSize);
+        const tdAreaSize = document.createElement('td');
+        tdAreaSize.classList.add('flex-1');
+        tdAreaSize.textContent = flat.areaSize;
+        trAreaSize.appendChild(tdAreaSize);
+        tbody.appendChild(trAreaSize);
+
+        // //Has AC
+        const trHasAC = document.createElement('tr');
+        trHasAC.classList.add('flex')
+        const thHasAC = document.createElement('th');
+        thHasAC.classList.add('flex-1');
+        thHasAC.textContent = 'Has AC';
+        trHasAC.appendChild(thHasAC);
+        const tdHasAC = document.createElement('td');
+        tdHasAC.classList.add('flex-1');
+        tdHasAC.textContent = flat.hasAC ? 'Yes' : 'No';
+        trHasAC.appendChild(tdHasAC);
+        tbody.appendChild(trHasAC);
+
+        // //Year Build
+        const trYearBuild = document.createElement('tr');
+        trYearBuild.classList.add('flex')
+        const thYearBuild = document.createElement('th');
+        thYearBuild.classList.add('flex-1');
+        thYearBuild.textContent = 'Year Build';
+        trYearBuild.appendChild(thYearBuild);
+        const tdYearBuild = document.createElement('td');
+        tdYearBuild.classList.add('flex-1');
+        tdYearBuild.textContent = flat.yearBuild;
+        trYearBuild.appendChild(tdYearBuild);
+        tbody.appendChild(trYearBuild);
+
+        // //Rent Price
+        const trRentPrice = document.createElement('tr');
+        trRentPrice.classList.add('flex')
+        const thRentPrice = document.createElement('th');
+        thRentPrice.classList.add('flex-1');
+        thRentPrice.textContent = 'Rent Price';
+        trRentPrice.appendChild(thRentPrice);
+        const tdRentPrice = document.createElement('td');
+        tdRentPrice.classList.add('flex-1');
+        tdRentPrice.textContent = flat.rentPrice;
+        trRentPrice.appendChild(tdRentPrice);
+        tbody.appendChild(trRentPrice);
+
+        // //Date Available
+        const trDateAvailable = document.createElement('tr');
+        trDateAvailable.classList.add('flex')
+        const thDateAvailable = document.createElement('th');
+        thDateAvailable.classList.add('flex-1');
+        thDateAvailable.textContent = 'Date Available';
+        trDateAvailable.appendChild(thDateAvailable);
+        const tdDateAvailable = document.createElement('td');
+        tdDateAvailable.classList.add('flex-1');
+        tdDateAvailable.textContent = flat.dateAvailable;
+        trDateAvailable.appendChild(tdDateAvailable);
+        tbody.appendChild(trDateAvailable);
+
+        //Favorite Button
+        const trFavorite = document.createElement('tr');
+        trFavorite.classList.add('flex')
+        const thFavorite = document.createElement('th');
+        thFavorite.classList.add('flex-1');
+        thFavorite.textContent = 'Favorite';
+        trFavorite.appendChild(thFavorite);
+        const tdFavorite = document.createElement('td');
+        tdFavorite.classList.add('flex-1');
+        const favoriteButton = document.createElement('button');
+        favoriteButton.onclick = (e) => toggleFavorite(flat.id, e);
+        const redHeart = document.createElement('i');
+        redHeart.classList.add('fa-solid', 'fa-heart', 'text-red-500');
+        const grayHeart = document.createElement('i');
+        grayHeart.classList.add('fa-regular', 'fa-heart', 'text-gray-500');
+        checkFlatFavorite(flat.id) ? grayHeart.style.display = 'none' : redHeart.style.display = 'none';
+        favoriteButton.appendChild(redHeart);
+        favoriteButton.appendChild(grayHeart);
+        tdFavorite.appendChild(favoriteButton);
+        trFavorite.appendChild(tdFavorite);
+        tbody.appendChild(trFavorite);
+
+        table.appendChild(tbody);
+        divContainer.appendChild(table);
+        gridContainer.appendChild(divContainer);
+    }
+};
