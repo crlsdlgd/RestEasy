@@ -55,11 +55,12 @@
                         <label for="birth-date"
                             class="absolute left-[1.1rem] -top-3.5 transition-all peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[5px] peer-focus:-top-3.5 peer-focus:text-[#1F375B] peer-focus:text-sm peer-placeholder-shown:text-base text-xs text-[#1F375B]">Birth
                             date</label>
+                            <span id="birth-date-error" class="text-red-500 text-xs flex left-[1.1rem] absolute"></span>
                     </div>
                     <!-- email -->
                     <div class="relative xs:w-1/2 xs:max-w-[300px]">
                         <input id="email" type="email" name="email" required placeholder="Email"
-                            autocomplete="new-email" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" onfocus="removeUniqueEmailError()"
+                            autocomplete="new-email" pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
                             title="Please enter a valid email"
                             class="w-full peer placeholder-transparent text-[#1F375B] rounded-full px-2 h-8 bg-[#EAF1FA] focus:outline-none focus:scale-105 hover:scale-110 transition-all focus:bg-[#F9FBFF]">
                         <label for="email"

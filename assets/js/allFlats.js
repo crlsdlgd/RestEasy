@@ -46,10 +46,11 @@ function filterFlats(event) {
 
     filteredFlats = filteredFlats.filter((flat) => {
         if (city) {
-            if (flat.city !== city) {
+            if (flat.city.toLowerCase() !== city.toLowerCase()) {
                 return false;
             }
         }
+
         if (flat.rentPrice < minPrice || flat.rentPrice > maxPrice) {
             return false;
         }
