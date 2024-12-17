@@ -42,7 +42,6 @@ const submitRegister = (event) => {
 }
 
 function validatePasswords(password, confirmPassword) {
-    // console.log(password, confirmPassword);
     if (password != confirmPassword) {
         document.getElementById('confirm-password-error').innerHTML = 'Passwords do not match';
         document.getElementById('password').style.border = 'red solid 1px';
