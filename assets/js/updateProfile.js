@@ -1,4 +1,4 @@
-import User from "./class/User";
+import User from "./class/user";
 
 let userLogged;
 const loadProfile = () => {

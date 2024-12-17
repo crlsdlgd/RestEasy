@@ -1,4 +1,6 @@
-import Flat from "./class/Flat";
+import Flat from "./class/flat";
+
+// import Flat from "./class/flat";
 document.getElementById('new-flat-form').addEventListener('submit', (event) => {
     submitNewFlat(event);
 });

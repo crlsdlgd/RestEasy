@@ -1,4 +1,4 @@
-import User from "./class/User";
+import User from "./class/user";
 
 document.getElementById('login-form').addEventListener('submit', (event) => {
     submitLogin(event)
