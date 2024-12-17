@@ -1,4 +1,5 @@
 class Flat {
+    
     constructor(city, streetName, streetNumber, areaSize, hasAC, yearBuild, rentPrice, dateAvailable) {
         this.id = Date.now();
         this.city = city;
