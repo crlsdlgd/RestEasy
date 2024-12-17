@@ -59,7 +59,6 @@ function filterFlats(event) {
         }
         return true;
     });
-    // console.log('Filtered flats:', filteredFlats);
     renderTable();
     renderGrid();
 };

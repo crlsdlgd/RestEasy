@@ -1,4 +1,4 @@
-import User from "./class/User";
+import User from "./class/user";
 
 let userLogged;
 const loadProfile = () => {
@@ -31,7 +31,6 @@ const submitUpdateProfile = (event) => {
         form.elements['last-name'].value,
         form.elements['birth-date'].value
     );
-    // console.log('User', user);
 
     const users = JSON.parse(localStorage.getItem('users'));
     const index = users.findIndex((item) => item.email == user.email);
